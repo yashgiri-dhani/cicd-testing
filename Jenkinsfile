@@ -1,8 +1,6 @@
 // Simple Test Jenkinsfile
 // This will test your Jenkins Pipeline setup
 
-properties([pipelineTriggers([githubPush()])])
-
 pipeline {
     agent any
     
