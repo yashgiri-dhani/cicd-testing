@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo '🔨 Building application...'
                 script {
-                    sh "/opt/maven/bin/mvn clean install -Dmaven.test.skip"
+                    sh "/opt/homebrew/bin/mvn clean install -Dmaven.test.skip"
                     echo 'Build successfully'
                 }
                 echo '✅ Build completed!'
