@@ -45,7 +45,7 @@ pipeline {
             steps {
                 echo '💾 Backing up current deployment...'
                 sh """
-                    mkdir -p ${BACKUP_DIR}
+
 
                     if [ -d "${DEPLOYMENT_DIR}" ] && [ "\$(ls -A ${DEPLOYMENT_DIR} 2>/dev/null)" ]; then
                         tar -czf ${BACKUP_DIR}/backup_${TIMESTAMP}.tar.gz -C ${DEPLOYMENT_DIR} . || true
@@ -64,7 +64,7 @@ pipeline {
             steps {
                 echo '🚀 Deploying application...'
                 sh """
-                    mkdir -p ${DEPLOYMENT_DIR}
+
                     rm -rf ${DEPLOYMENT_DIR}/*
 
                     if [ -d "${BUILD_OUTPUT_DIR}" ]; then
