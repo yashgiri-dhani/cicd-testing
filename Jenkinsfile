@@ -64,19 +64,6 @@ pipeline {
                 echo '🚀 Deploying application...'
                 sh """
 
-//                     rm -rf ${DEPLOYMENT_DIR}/*
-//
-//                     if [ -d "${BUILD_OUTPUT_DIR}" ]; then
-//                         cp -r ${BUILD_OUTPUT_DIR}/* ${DEPLOYMENT_DIR}/
-//                     else
-//                         echo "❌ Build output directory not found"
-//                         exit 1
-//                     fi
-
-
-
-//                     chmod -R 755 ${DEPLOYMENT_DIR}
-
                     kill -9 \$(pgrep -f hospitalManagement) || true
                     sleep 1
                     java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar
