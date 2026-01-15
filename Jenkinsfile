@@ -11,7 +11,6 @@ pipeline {
     }
 
     stages {
-
         stage('Init Timestamp') {
             steps {
                 script {
