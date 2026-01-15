@@ -7,7 +7,7 @@ pipeline {
         SERVICE_URL    = 'http://localhost:8090'
         HEALTH_ENDPOINT = '/health'
         BUILD_OUTPUT_DIR = '/Users/yash.giri/Desktop/auto-uat-deploy/build'
-        HOME_PATH = '/Users/yash.giri/Desktop/auto-uat-deploy/'
+        HOME_PATH = '/Users/yash.giri/Desktop/auto-uat-deploy'
     }
 
     stages {
