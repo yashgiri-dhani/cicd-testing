@@ -125,7 +125,8 @@ pipeline {
 
                         kill -9 \$(pgrep -f hospitalManagement) || true
                         sleep 1
-                        java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar &
+                         nohup java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar \
+                         > ${HOME_PATH}/app.log 2>&1 &
                     fi
                 fi
             """
