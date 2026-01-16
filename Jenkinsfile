@@ -134,3 +134,19 @@ pipeline {
         }
     }
 }
+
+ post {
+                success {
+                    mail to:"jatin.k13@indiabulls.com",
+                    cc: "yash.giri@indiabulls.com",
+                    subject:"UAT Jenkins OL Layer Job SUCCESS: ${currentBuild.fullDisplayName}",
+                    body: "${env.BUILD_URL} has result ${currentBuild.result}"
+                }
+                failure {
+                     mail to:"jatin.k13@indiabulls.com",
+                      cc: "yash.giri@indiabulls.com",
+                    subject:"UAT Jenkins OL Layer Job FAILURE: ${currentBuild.fullDisplayName}",
+                    body: "${env.BUILD_URL} has result ${currentBuild.result}"
+                }
+            }
+        }
