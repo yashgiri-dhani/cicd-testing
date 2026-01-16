@@ -62,13 +62,7 @@ pipeline {
        stage('Deploy') {
            steps {
                echo '🚀 Deploying application...'
-               sh """
-                   pkill -f hospitalManagement || true
-                   sleep 1
-
-                   setsid java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar \
-                     > ${HOME_PATH}/app.log 2>&1 < /dev/null &
-               """
+                sh "${HOME_PATH}/start.sh"
            }
        }
 
