@@ -103,11 +103,7 @@ pipeline {
 
     post {
         success {
-            echo '🎉 DEPLOYMENT SUCCESSFUL!'
-            mail to:"jatin.k13@indiabulls.com",
-            cc: "yash.giri@indiabulls.com",
-             subject:"UAT Jenkins OL Layer Job SUCCESS: ${currentBuild.fullDisplayName}",
-              body: "${env.BUILD_URL} has result ${currentBuild.result}"
+            echo '🎉 DEPLOYMENT SUCCESSFUL
         }
 
         failure {
@@ -131,10 +127,6 @@ pipeline {
                 fi
             """
              echo "✅ Rollback to last successful deployment completed."
-             mail to:"jatin.k13@indiabulls.com",
-                                   cc: "yash.giri@indiabulls.com",
-                                 subject:"UAT Jenkins OL Layer Job FAILURE: ${currentBuild.fullDisplayName}",
-                                 body: "${env.BUILD_URL} has result ${currentBuild.result}"
         }
 
         always {
