@@ -122,9 +122,11 @@ pipeline {
                         sleep 1
                         nohup java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar \
                          > ${HOME_PATH}/app.log 2>&1 &
+
                     fi
                 fi
             """
+             echo "✅ Rollback to last successful deployment completed."
         }
 
         always {
