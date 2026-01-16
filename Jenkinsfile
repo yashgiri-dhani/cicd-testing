@@ -5,7 +5,7 @@ pipeline {
         DEPLOYMENT_DIR = '/Users/jatin.k13/Desktop/auto-deploy/deployment'
         BACKUP_DIR     = '/Users/jatin.k13/Desktop/auto-deploy/backup'
         SERVICE_URL    = 'http://localhost:8090'
-        HEALTH_ENDPOINT = '/health'
+        HEALTH_ENDPOINT = '//health'
         BUILD_OUTPUT_DIR = '/Users/jatin.k13/Desktop/auto-deploy/build'
         HOME_PATH = '/Users/jatin.k13/Desktop/auto-deploy'
     }
