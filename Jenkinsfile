@@ -63,10 +63,11 @@ pipeline {
            steps {
                echo '🚀 Deploying application...'
                sh """
-                   kill -9 \$(pgrep -f hospitalManagement) || true
+                   pkill -f hospitalManagement || true
                    sleep 1
-                   nohup java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar \
-                   > ${HOME_PATH}/app.log 2>&1 &
+
+                   setsid java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar \
+                     > ${HOME_PATH}/app.log 2>&1 < /dev/null &
                """
            }
        }
