@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        DEPLOYMENT_DIR = '/Users/yash.giri/Desktop/auto-uat-deploy/deployment'
+        DEPLOYMENT_DIR = '/Users/jatin.k13/Desktop/auto-deploy/deployment'
         BACKUP_DIR     = '/Users/jatin.k13/Desktop/auto-deploy/backup'
         SERVICE_URL    = 'http://localhost:8090'
         HEALTH_ENDPOINT = '/health'
-        BUILD_OUTPUT_DIR = '/Users/yash.giri/Desktop/auto-uat-deploy/build'
+        BUILD_OUTPUT_DIR = '/Users/jatin.k13/Desktop/auto-deploy/build'
         HOME_PATH = '/Users/jatin.k13/Desktop/auto-deploy'
     }
 
@@ -125,7 +125,7 @@ pipeline {
 
                         kill -9 \$(pgrep -f hospitalManagement) || true
                         sleep 1
-                         nohup java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar \
+                        nohup java -jar ${HOME_PATH}/hospitalManagement-0.0.1-SNAPSHOT.jar \
                          > ${HOME_PATH}/app.log 2>&1 &
                     fi
                 fi
